@@ -25,8 +25,18 @@
     />
     <style>
       header div#logo img {
-        height: 52px;
+        height: 104px;
         width: auto;
+      }
+      header .de-flex {
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+      #mainmenu > li > a.menu-item {
+        font-size: 18px;
+      }
+      header .h-phone span {
+        font-size: 18px;
       }
     </style>
   </head>
@@ -92,7 +102,7 @@
                   <ul id="mainmenu">
                     <li><a class="menu-item" href="/">Home</a></li>
                     <li>
-                      <a class="menu-item" href="#top">Services</a>
+                      <a class="menu-item" href="#services">Services</a>
                       <ul>
                         <li><a class="menu-item" href="#top">Individual Therapy</a></li>
                         <li><a class="menu-item" href="#top">Couples Counseling</a></li>
@@ -109,11 +119,16 @@
                 </div>
                 <div class="de-flex-col">
                   <div class="menu_side_area">
-                    <div class="h-phone xs-hide" style="display: flex; align-items: center; gap: 8px;">
+                    <a
+                      class="h-phone xs-hide"
+                      href="https://api.whatsapp.com/send?phone=917999609202"
+                      style="display: flex; align-items: center; gap: 8px;"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       <img src="/whatsapp-logo.png" alt="WhatsApp" style="height: 20px; width: 20px;" />
                       <span>+91 7999609202</span>
-                    </div>
-                    <a href="#top" class="btn-main d-xl-block d-md-none">Make Appointment</a>
+                    </a>
                     <span id="menu-btn"></span>
                   </div>
                 </div>
@@ -126,10 +141,10 @@
       <div class="no-bottom no-top" id="content">
         <div id="top"></div>
 
-        <section class="text-light section-dark pt80 no-bottom jarallax">
-          <img src="/wmc/images/background/1.webp" class="jarallax-img" alt="" />
-          <div class="container">
-            <div class="row g-4 align-items-center">
+        <section class="text-light section-dark pt80 no-bottom jarallax" style="min-height: 1058px;">
+          <img src="/wmc/images/background/1.webp" class="jarallax-img" alt="" style="min-height: 1058px;" />
+          <div class="container h-100">
+            <div class="row g-4 align-items-center" style="min-height: 1058px;">
               <div class="col-lg-6">
                 <div class="subtitle s2 mb-2">Your Personal Therapist</div>
                 <h1 class="mb-1">
@@ -139,17 +154,14 @@
                 <p>
                   World Mind Care offers professional psychological counseling blended with mindful and spiritual approaches to support emotional balance, mental clarity, and inner strength.
                 </p>
-                <a class="btn-main" href="#top">Our Services</a>
+                <a class="btn-main" href="#services">Our Services</a>
               </div>
 
-              <div class="col-lg-6">
-                <img src="/wmc/images/misc/1.webp" class="img-fluid" alt="" />
-              </div>
             </div>
           </div>
         </section>
 
-        <section class="relative overflow-hidden">
+        <section class="relative overflow-hidden" id="services">
           <img src="/wmc/images/misc/flowers-crop-2.webp" class="w-30 absolute top-0 start-0 sw-anim" alt="" />
           <div class="container">
             <div class="row g-4">
@@ -483,12 +495,10 @@
         <div class="container relative z-1000">
           <div class="row gx-5">
             <div class="col-lg-4 col-sm-6">
-              <img src="/wmc-logo.webp" alt="" style="height: 52px; width: auto;" />
-              <div class="spacer-20"></div>
               <p>
-                World Mind Care offers personalized psychological counseling blended with mindfulness and inner awareness.
-                Each session is conducted with care, confidentiality, and a deep respect for the individual’s emotional
-                journey.
+                <strong class="id-color-2">World Mind Care</strong> offers personalized psychological counseling blended
+                with mindfulness and inner awareness. Each session is conducted with care, confidentiality, and a deep
+                respect for the individual’s emotional journey.
               </p>
               <p>
                 Support is provided in a safe, non-judgmental space to help you gain clarity, balance, and inner strength.
@@ -536,21 +546,9 @@
                 <div class="spacer-20"></div>
 
                 <div class="fw-bold text-dark">
-                  <i class="icofont-location-pin me-2 id-color"></i>Office Location
+                  <i class="icofont-location-pin me-2 id-color"></i>Center Location
                 </div>
                 1, Shiv Kutir, Opp. Limbodi Gate, Khandwa Road, Indore, MP 452001
-
-                <div class="spacer-20"></div>
-
-                <div class="fw-bold text-dark">
-                  <img
-                    src="/whatsapp-logo.png"
-                    alt="WhatsApp"
-                    style="height: 16px; width: 16px; margin-right: 8px; vertical-align: -2px;"
-                  />
-                  Online &amp; In-Person Sessions (India)
-                </div>
-                +91 7999609202
 
                 <div class="spacer-20"></div>
 
