@@ -38,6 +38,38 @@
       header .h-phone span {
         font-size: 18px;
       }
+      @media (max-width: 991px) {
+        header div#logo img {
+          height: 52px;
+        }
+        header.header-mobile {
+          background: #fff !important;
+        }
+        header .h-phone span {
+          font-size: 14px;
+          color: #000;
+        }
+        header .menu_side_area {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+        header .h-phone {
+          margin: 8px auto 0;
+          justify-content: center;
+          width: 100%;
+        }
+        header #menu-btn,
+        header #menu-btn:before,
+        header #menu-btn:after {
+          background: #000;
+        }
+        header.header-mobile #mainmenu li a.menu-item,
+        header.header-mobile #mainmenu li a.menu-item:after,
+        header.header-mobile #mainmenu li.has-child:after {
+          color: #000;
+        }
+      }
     </style>
   </head>
 
