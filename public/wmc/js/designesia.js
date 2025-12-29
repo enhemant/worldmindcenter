@@ -1610,6 +1610,38 @@
          video_autosize();
          custom_bg();
          menu_arrow();
+         $('#mainmenu a[href^="/our-services"]').on("click", function(evn) {
+             var targetUrl = new URL(this.href, window.location.href);
+             var currentPath = window.location.pathname.replace(/\/+$/, "");
+             var targetPath = targetUrl.pathname.replace(/\/+$/, "");
+             if (currentPath === targetPath && targetUrl.hash) {
+                 evn.preventDefault();
+                 var $target = jQuery(targetUrl.hash);
+                 if ($target.length) {
+                     $target[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+                 } else {
+                     window.location.href = targetUrl.href;
+                 }
+                 return;
+             }
+             evn.preventDefault();
+             if (targetUrl.hash) {
+                 sessionStorage.setItem('wmc-service-target', targetUrl.hash);
+             }
+             window.location.href = targetUrl.origin + targetUrl.pathname;
+         });
+         if (window.location.pathname.replace(/\/+$/, "") === "/our-services") {
+             var pendingTarget = sessionStorage.getItem('wmc-service-target');
+             if (pendingTarget) {
+                 sessionStorage.removeItem('wmc-service-target');
+                 setTimeout(function() {
+                     var targetEl = document.querySelector(pendingTarget);
+                     if (targetEl) {
+                         targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                     }
+                 }, 300);
+             }
+         }
          load_owl();
          custom_elements();
          init(); 
