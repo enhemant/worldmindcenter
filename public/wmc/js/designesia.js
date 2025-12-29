@@ -1611,6 +1611,10 @@
          custom_bg();
          menu_arrow();
          $('#mainmenu a[href^="/our-services"]').on("click", function(evn) {
+             if (jQuery('header').hasClass('menu-open')) {
+                 jQuery('header').removeClass('menu-open');
+                 jQuery('#menu-btn').removeClass('menu-open');
+             }
              var targetUrl = new URL(this.href, window.location.href);
              var currentPath = window.location.pathname.replace(/\/+$/, "");
              var targetPath = targetUrl.pathname.replace(/\/+$/, "");
