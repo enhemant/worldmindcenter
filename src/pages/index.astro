@@ -43,7 +43,7 @@
           height: 52px;
         }
         header.header-mobile {
-          background: #fff !important;
+          background: rgb(90, 158, 124) !important;
         }
         header .h-phone span {
           font-size: 14px;
@@ -68,6 +68,72 @@
         header.header-mobile #mainmenu li a.menu-item:after,
         header.header-mobile #mainmenu li.has-child:after {
           color: #000;
+        }
+        header.header-mobile #mainmenu > li.menu-item-has-children > a.menu-item:after {
+          content: "\f107";
+          font-family: "Font Awesome 6 Free";
+          font-weight: 900;
+          color: #000;
+        }
+        header.header-mobile #mainmenu > li > span,
+        header.header-mobile #mainmenu li > ul > li > span,
+        header.header-mobile #mainmenu li span.active {
+          color: #000;
+        }
+        header.header-mobile #mainmenu > li > span {
+          background: url(/wmc/images/ui/arrow-down.png) center no-repeat;
+        }
+        header.header-mobile #mainmenu li span.active {
+          background: url(/wmc/images/ui/arrow-up.png) center no-repeat;
+        }
+      }
+      @media (max-width: 767px) {
+        header.smaller.scroll-light .logo-scroll {
+          display: none;
+        }
+        header.smaller.scroll-light .logo-main {
+          display: none;
+        }
+        header .logo-mobile {
+          display: block;
+        }
+        .hero-section {
+          min-height: 820px !important;
+        }
+        .hero-section .jarallax-img {
+          min-height: 820px !important;
+        }
+        .hero-section .hero-content {
+          min-height: 820px !important;
+          justify-content: center;
+          text-align: center;
+        }
+        .hero-section .hero-content .col-lg-6 {
+          max-width: 100%;
+        }
+        .specialist-card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 16px;
+          margin-bottom: 0;
+        }
+        .specialist-photo {
+          width: 100% !important;
+          max-width: 320px;
+        }
+        .specialist-info {
+          position: static !important;
+          top: auto !important;
+          left: auto !important;
+          right: auto !important;
+          transform: none !important;
+          width: 100% !important;
+          max-width: 320px;
+          margin-top: 0;
+        }
+        .specialist-section .spacer-single {
+          display: none;
         }
       }
     </style>
@@ -173,10 +239,10 @@
       <div class="no-bottom no-top" id="content">
         <div id="top"></div>
 
-        <section class="text-light section-dark pt80 no-bottom jarallax" style="min-height: 1058px;">
+        <section class="text-light section-dark pt80 no-bottom jarallax hero-section" style="min-height: 1058px;">
           <img src="/wmc/images/background/1.webp" class="jarallax-img" alt="" style="min-height: 1058px;" />
           <div class="container h-100">
-            <div class="row g-4 align-items-center" style="min-height: 1058px;">
+            <div class="row g-4 align-items-center hero-content" style="min-height: 1058px;">
               <div class="col-lg-6">
                 <div class="subtitle s2 mb-2">Your Personal Therapist</div>
                 <h1 class="mb-1">
@@ -349,9 +415,9 @@
             </div>
             <div class="row g-4 justify-content-center">
               <div class="col-lg-6 col-md-8">
-                <div class="relative">
-                  <img src="/wmc/images/team/1.webp" class="rounded-10px w-50" alt="Ritanshu Ojha" />
-                  <div class="absolute abs-middle end-0 w-60 p-3 py-5 text-center bg-color-3 rounded-10px">
+                <div class="relative specialist-card">
+                  <img src="/wmc/images/team/1.webp" class="rounded-10px w-50 specialist-photo" alt="Ritanshu Ojha" />
+                  <div class="absolute abs-middle end-0 w-60 p-3 py-5 text-center bg-color-3 rounded-10px specialist-info">
                     <h4 class="mb-0">Ritanshu Ojha</h4>
                     <p class="mb-2">MA in Clinical Psychology, DCP, BCA</p>
                     <p class="mb-2">Specialization: Well-Being &amp; Mindfulness-Based Counseling</p>
