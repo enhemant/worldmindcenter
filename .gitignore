@@ -20,5 +20,16 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# local tooling
+.vscode/
+
+# firebase
+.firebase/
+
 # jetbrains setting folder
 .idea/
+
+# local artifacts
+temp/
+ref_assets/
+site.zip
