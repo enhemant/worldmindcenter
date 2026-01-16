@@ -243,7 +243,7 @@
 
         <section class="relative overflow-hidden jarallax">
           <img src="/wmc/images/background/6.png" class="jarallax-img" alt="" />
-          <img src="/wmc/images/misc/flowers-crop-2.webp" class="w-30 absolute top-0 end-0 sw-anim" alt="" />
+          <img src="/wmc/images/misc/flowers-crop-2.webp" class="w-30 absolute top-0 end-0 sw-anim" alt="" loading="lazy" />
           <div class="container relative z-1">
             <div class="row g-4 align-items-center">
               <div class="col-lg-8 offset-lg-4">
@@ -269,6 +269,20 @@
                             <option value="Stress &amp; Emotional Management">Stress &amp; Emotional Management</option>
                             <option value="Anxiety &amp; Fear Healing">Anxiety &amp; Fear Healing</option>
                             <option value="Depression &amp; Emotional Healing">Depression &amp; Emotional Healing</option>
+                          </select>
+                          <i class="absolute top-0 end-0 id-color pt-3 pe-3 icofont-simple-down"></i>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-12">
+                        <h5>Preferred mode of session</h5>
+                        <div class="relative">
+                          <select name="preferred_mode" id="preferred_mode" class="form-control bg-grey no-border" required>
+                            <option value="" selected disabled>Select preferred mode</option>
+                            <option value="In-Clinic (Indore)">In-Clinic (Indore)</option>
+                            <option value="Online Video (Google Meet or WhatsApp Video)">Online Video (Google Meet or WhatsApp Video)</option>
+                            <option value="Online Audio (Call or WhatsApp Call)">Online Audio (Call or WhatsApp Call)</option>
+                            <option value="No preference">No preference</option>
                           </select>
                           <i class="absolute top-0 end-0 id-color pt-3 pe-3 icofont-simple-down"></i>
                         </div>
@@ -339,7 +353,7 @@
                     </div>
 
                     <div id="submit" class="mt20">
-                      <input type="submit" id="send_message" value="Send Appointment" class="btn-main" />
+                      <input type="submit" id="send_message" value="Send" class="btn-main" />
                     </div>
                   </form>
                 </div>
@@ -357,7 +371,6 @@
                   <h3>Schedule Your Appointment Today!</h3>
                   Mon - Sat: 10AM - 5PM<br />
                   Sunday: 3PM - 5PM<br />
-                  <a class="btn-main btn-light-trans text-light mt-3" href="/appointment">Make Appointment</a>
                 </div>
               </div>
 
@@ -366,10 +379,25 @@
                   <i class="d-block fs-40 mb-2 icofont-location-pin"></i>
                   <h3>Visit Our Clinic</h3>
                   1, Shiv Kutir, Opp. Limbodi Gate, Khandwa Road, Indore, MP 452001<br />
-                  <a class="btn-main btn-light-trans text-light mt-3" href="#top">Get Direction</a>
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section class="no-top no-bottom">
+          <div class="container-fluid p-0">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3681.744889630911!2d75.88188894726972!3d22.663298344039344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd9a6bf1ba9d%3A0xbc951484e11d0116!2sShiv%20Kutir%20Boys%20Hostel!5e0!3m2!1sen!2sau!4v1768570968273!5m2!1sen!2sau"
+              width="600"
+              height="450"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="w-100 d-block"
+              title="World Mind Care Location Map"
+            ></iframe>
           </div>
         </section>
       </div>
@@ -454,8 +482,8 @@
                 <div class="de-flex">
                   <div class="de-flex-col">Copyright 2025 - World Mind Care</div>
                   <ul class="menu-simple">
-                    <li><a href="/#top">Terms &amp; Conditions</a></li>
-                    <li><a href="/#top">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms &amp; Conditions</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
                   </ul>
                 </div>
               </div>
@@ -463,15 +491,15 @@
           </div>
         </div>
 
-        <img src="/wmc/images/misc/flowers-crop-3.webp" class="w-20 absolute top-0 end-0 sw-anim" alt="" />
+        <img src="/wmc/images/misc/flowers-crop-3.webp" class="w-20 absolute top-0 end-0 sw-anim" alt="" loading="lazy" />
       </footer>
     </div>
 
-    <script is:inline src="/wmc/js/plugins.js"></script>
-    <script is:inline src="/wmc/js/designesia.js"></script>
-    <script is:inline src="/wmc/js/swiper.js"></script>
-    <script is:inline src="/wmc/js/custom-marquee.js"></script>
-    <script is:inline src="/wmc/js/custom-swiper-1.js"></script>
+    <script is:inline defer src="/wmc/js/plugins.js"></script>
+    <script is:inline defer src="/wmc/js/designesia.js"></script>
+    <script is:inline defer src="/wmc/js/swiper.js"></script>
+    <script is:inline defer src="/wmc/js/custom-marquee.js"></script>
+    <script is:inline defer src="/wmc/js/custom-swiper-1.js"></script>
     <script is:inline>
       (function () {
         if (typeof window.jQuery === 'undefined') return;

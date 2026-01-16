@@ -1387,6 +1387,11 @@
       * --------------------------------------------------*/
      $(function(){
         $('#de-loader ').prepend($('<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>'));
+        if(preloader==="on"){
+            setTimeout(function() {
+                jQuery('#de-loader').fadeOut(300);
+            }, 700);
+        }
          'use strict';
          f_rtl();
          load_magnificPopup();
