@@ -1,0 +1,42 @@
+name: Build and deploy to Hostinger branch
+
+on:
+push:
+branches: [ main ]
+
+jobs:
+build:
+runs-on: ubuntu-latest
+
+steps:
+- name: Checkout main
+uses: actions/checkout@v4
+
+- name: Use Node
+uses: actions/setup-node@v4
+with:
+node-version: '20'
+
+- name: Install dependencies
+run: npm install
+
+- name: Build
+run: npm run build
+
+- name: Prepare deploy branch
+run: |
+git config user.name "GitHub Actions"
+git config user.email "actions@github.com"
+
+git fetch origin deploy
+git checkout deploy
+
+# Clean deploy branch and copy dist
+rm -rf ./*
+cp -r ../dist/* .
+
+# Commit & push
+git add .
+git commit -m "Deploy from main $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+git push origin deploy
+

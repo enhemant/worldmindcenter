@@ -1,41 +1,51 @@
-name: Build and deploy to Hostinger branch
+name: Build and deploy to Hostinger
 
 on:
-push:
-branches: [ main ]
+  push:
+    branches: [ main ]
 
 jobs:
-build:
-runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-steps:
-- name: Checkout main
-uses: actions/checkout@v4
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
 
-- name: Use Node
-uses: actions/setup-node@v4
-with:
-node-version: '20'
+      - name: Use Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-- name: Install dependencies
-run: npm install
+      - name: Install dependencies
+        run: npm install
 
-- name: Build
-run: npm run build
+      - name: Build
+        run: npm run build
 
-- name: Prepare deploy branch
-run: |
-git config user.name "GitHub Actions"
-git config user.email "actions@github.com"
+      - name: Zip dist
+        run: |
+          cd dist
+          zip -r ../site.zip .
 
-git fetch origin deploy
-git checkout deploy
+      - name: Upload site.zip to Hostinger
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.HOSTINGER_HOST }}
+          username: ${{ secrets.HOSTINGER_USER }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: ${{ secrets.HOSTINGER_PORT }}
+          source: "site.zip"
+          target: ${{ secrets.HOSTINGER_REMOTE_PATH }}
 
-# Clean deploy branch and copy dist
-rm -rf ./*
-cp -r ../dist/* .
-
-# Commit & push
-git add .
-git commit -m "Deploy from main $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
-git push origin deploy
+      - name: Unzip on server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOSTINGER_HOST }}
+          username: ${{ secrets.HOSTINGER_USER }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: ${{ secrets.HOSTINGER_PORT }}
+          script: |
+            cd ${{ secrets.HOSTINGER_REMOTE_PATH }}
+            unzip -o site.zip
+            rm -f site.zip
